@@ -1,0 +1,162 @@
+/* Styling for the spreadsheet */
+.spreadsheet {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  .toolbar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  
+  .formula-bar {
+    flex: 1;
+    padding: 5px;
+  }
+
+  .save-indicator {
+    padding: 4px 8px;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    animation: fadeInOut 1s ease-in-out;
+  }
+
+  @keyframes fadeInOut {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    80% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
+  .grid-container {
+    display: grid;
+    border: 1px solid #ddd;
+    overflow-x: auto;
+  }
+  
+  .row {
+    display: flex;
+    width: fit-content;
+  }
+  
+  .cell {
+    border: 1px solid #ddd;
+    height: 25px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: transparent;
+    min-width: 120px;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  
+  .cell input {
+    border: none;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: transparent;
+  }
+  
+  .cell.selected {
+    background-color: rgba(240, 248, 255, 0.6);
+  }
+
+  .cell.multi-selected {
+    background-color: rgba(240, 248, 255, 0.3);
+  }
+  
+  .header-cell {
+    background-color: #f4f4f4 !important;
+    font-weight: bold;
+    position: relative;
+    user-select: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 20px 0 8px;
+  }
+
+  .header-cell .resizer {
+    position: absolute;
+    right: -3px;
+    top: 0;
+    height: 100%;
+    width: 6px;
+    background-color: transparent;
+    cursor: col-resize;
+    z-index: 1;
+  }
+
+  .header-cell .resizer:hover,
+  .header-cell .resizer.resizing {
+    background-color: #0056b3;
+  }
+  
+  .corner-cell {
+    background-color: #ddd;
+  }
+
+  .row-header {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .row-header:hover {
+    background-color: #e0e0e0 !important;
+  }
+
+  .row-header.row-selected {
+    background-color: #cce5ff !important;
+  }
+
+  .row-header.row-selected:hover {
+    background-color: #b8daff !important;
+  }
+  
+  .toolbar button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  .toolbar button:hover {
+    background-color: #0056b3;
+  }
+
+  .toolbar input[type="color"] {
+    width: 40px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .toolbar input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+
+  .toolbar input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 3px;
+  }
+
+  .delete-button {
+    background-color: #dc3545 !important;
+  }
+
+  .delete-button:hover {
+    background-color: #c82333 !important;
+  }
+  
